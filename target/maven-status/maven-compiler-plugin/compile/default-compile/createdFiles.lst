@@ -1,0 +1,7 @@
+EJB\ProductoFacadeLocal.class
+EJB\AbstractFacade.class
+EJB\ProductoFacade.class
+Controller\ProductoController.class
+com\ra\pruebatecnicajavaweb\JAXRSConfiguration.class
+Entity\Producto.class
+com\ra\pruebatecnicajavaweb\resources\JavaEE8Resource.class

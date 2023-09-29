@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Registro de Productos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</h:head>
+
+<body>
+
+    <h:form id="Datos">
+            <p:fieldset legend="Productos" toggleable="true">
+                <p:dataTable value="#{productoController.listaProducto}" var="c">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{c.id}" />
+                    </p:column>
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{c.nombre}" />
+                    </p:column>
+                    <p:column headerText="Descripcion">
+                        <h:outputText value="#{c.descripcion}" />
+                    </p:column>
+                    <p:column headerText="Precio">
+                        <h:outputText value="#{c.precio}" />
+                    </p:column>
+                    
+                    
+                </p:dataTable>
+            </p:fieldset>
+        </h:form>
+    
+    
+    <h:form id="formProducto">
+
+    <p:inputText value="#{productoController.producto.nombre}" placeholder="Nombre" />
+    <p:inputText value="#{productoController.producto.descripcion}" placeholder="Descripción" />
+    <p:inputText value="#{productoController.producto.precio}" placeholder="Precio" />
+    
+    <p:commandButton value="Agregar" action="#{productoController.agregarProducto}" 
+                     update=":formProducto :Datos" />
+    
+<h:messages />
+
+</h:form>
+
+</body>
+</html>
